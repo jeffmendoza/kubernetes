@@ -6,10 +6,9 @@ to Kubernetes and running your first containers on the cluster.
 
 ### Running a container (simple version)
 
-From this point onwards, it is assumed that ```kubectl``` is on your path from one of the getting started guides.
+From this point onwards, it is assumed that `kubectl` is on your path from one of the getting started guides.
 
-The `kubectl` line below spins up two containers running
-[Nginx](http://nginx.org/en/) running on port 80:
+The `kubectl` line below first specifies the name of the [repilcation controller](/docs/replication-controller.md) to create `my-nginx`. Then, the [Docker image](https://registry.hub.docker.com/_/nginx/) to run `--image=nginx`. Next, the number of [pod](/docs/pods.md) replicas to create `--replicas=2`. Finally, the port to open for each pod `--port=80`.
 
 ```bash
 kubectl run my-nginx --image=nginx --replicas=2 --port=80
@@ -31,7 +30,7 @@ kubectl stop rc my-nginx
 ```
 
 ### Exposing your pods to the internet.
-On some platforms (for example Google Compute Engine) the kubectl command can integrate with your cloud provider to add a public IP address for the pods,
+On some platforms (for example Google Compute Engine) the kubectl command can integrate with your cloud provider to add a [public IP address](/docs/services.md#external-services) for the pods,
 to do this run:
 
 ```bash
