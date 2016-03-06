@@ -28,7 +28,7 @@ import (
 )
 
 func connect() (*sql.DB, error) {
-	db, err := sql.Open("mysql", "root:secret@tcp(localhost:3306)/?parseTime=true")
+	db, err := sql.Open("mysql", "root:mysecretpassword@tcp(localhost:3306)/?parseTime=true")
 	if err != nil {
 		return db, fmt.Errorf("Error opening db: %v", err)
 	}
